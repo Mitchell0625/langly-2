@@ -1,0 +1,16 @@
+.header, .header__div {
+  display: flex;
+  align-items: center; }
+
+.header {
+  justify-content: space-between;
+  padding: 20px; }
+
+.header__h1 {
+  font-size: 40px; }
+
+.header__div {
+  justify-content: space-around;
+  width: 20%; }
+
+/*# sourceMappingURL=Header.css.map */
