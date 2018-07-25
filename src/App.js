@@ -4,6 +4,8 @@ import "./App.css";
 import { Switch, Route } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Landing from "./components/Landing/Landing";
+import Register from "./components/Register/Register";
+import Login from "./components/Login/Login";
 
 class App extends Component {
   render() {
@@ -13,6 +15,8 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Landing} />
+          <Route path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
         </Switch>
       </div>
     );
