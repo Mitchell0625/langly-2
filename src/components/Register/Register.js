@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Languages from "../Languages/Languages";
+import "./Register.css";
 
 class Register extends Component {
   state = {
@@ -22,7 +23,7 @@ class Register extends Component {
     });
     return (
       <div className="register">
-        <div>{viewLanguages}</div>
+        <div className="register__div">{viewLanguages}</div>
       </div>
     );
   }

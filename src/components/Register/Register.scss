@@ -1,0 +1,15 @@
+@import "../../utils.scss";
+
+.register {
+  padding-top: 100px;
+  width: 80%;
+  margin: auto;
+}
+.register__div {
+  margin: 10px;
+  height: 100%;
+  @extend %flex-row-align-center;
+
+  justify-content: space-around;
+  flex-wrap: wrap;
+}

@@ -5,7 +5,9 @@ import "./Header.css";
 const Header = () => {
   return (
     <div className="header">
-      <h1 className="header__h1">langly</h1>
+      <Link to="/">
+        <h1 className="header__h1">langly</h1>
+      </Link>
       <div className="header__div">
         <p className="header__option">
           Site language:{" "}
@@ -15,7 +17,7 @@ const Header = () => {
             </select>
           </span>
         </p>
-        <Link to="/login">Login</Link>
+        <button>Login</button>
       </div>
     </div>
   );

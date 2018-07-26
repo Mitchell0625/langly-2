@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./Languages.css";
 
 const propTypes = {
   title: PropTypes.string.isRequired
