@@ -3,12 +3,14 @@ import PropTypes from "prop-types";
 import "./Languages.css";
 
 const propTypes = {
-  title: PropTypes.string.isRequired
+  id: PropTypes.number.isRequired,
+  title: PropTypes.string.isRequired,
+  selectLang: PropTypes.func.isRequired
 };
 
-const Languages = ({ title }) => {
+const Languages = ({ id, title, selectLang }) => {
   return (
-    <div className="languages">
+    <div className="languages" onClick={() => selectLang(id, title)}>
       <h3>{title}</h3>
     </div>
   );

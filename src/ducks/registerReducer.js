@@ -1,26 +1,26 @@
 import axios from "axios";
 
 const initialState = {
-  languages: [],
+  language: {},
   goal: ""
 };
 
-const GET_LANGUAGES = "GET_LANGUAGES";
+const SELECT_LANGUAGE = "SELECT_LANGUAGE";
 
-export function getLanguages() {
+export function selectLanguage(language) {
   return {
-    type: GET_LANGUAGES,
-    payload: axios.get("/api/getlang")
+    type: SELECT_LANGUAGE,
+    payload: language
   };
 }
 
 export default function registerReducer(state = initialState, action) {
   switch (action.type) {
-    case `${GET_LANGUAGES}_FULFILLED`:
+    case `SELECT_LANGUAGE`:
       console.log(action);
       return {
         ...state,
-        languages: action.payload.data
+        language: action.payload
       };
     default:
       return state;
