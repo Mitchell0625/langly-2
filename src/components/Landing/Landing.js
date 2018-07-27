@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
 import Footer from "./Footer/Footer";
 import "./Landing.css";
 
 const Landing = () => {
   return (
     <div className="landing">
+      <Header />
       <div className="landing__div">
         <div>
           <h2>Learn a language for free. Forever.</h2>

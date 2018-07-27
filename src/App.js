@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, withRouter } from "react-router-dom";
 import Header from "./components/Header/Header";
 import Landing from "./components/Landing/Landing";
 import Register from "./components/Register/Register";
@@ -11,7 +11,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Header />
+        {this.props.location.pathname !== "/" ? <Header /> : ""}
 
         <Switch>
           <Route exact path="/" component={Landing} />
@@ -23,4 +23,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

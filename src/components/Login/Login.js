@@ -1,22 +1,36 @@
 import React, { Component } from "react";
-import dropdown from "./dropdown";
 
-class DropLog extends Component {
+class Login extends Component {
   state = {
     username: "",
     password: ""
   };
+
+  handleInput = e => {
+    this.setState(() => ({ [e.target.name]: e.target.value }));
+  };
+
   render() {
     return (
       <div>
-        <button>Sign In with Google</button>
-        <button>Sign In with Facebook</button>
-        <p>or</p>
-        <input name="username" type="email" />
-        <input name="password" type="password" />
+        <form>
+          <input
+            name="username"
+            type="email"
+            placeholder="username"
+            onChange={this.handleInput}
+          />
+          <input
+            name="password"
+            type="password"
+            placeholder="password"
+            onChange={this.handleInput}
+          />
+          <button>Login</button>
+        </form>
       </div>
     );
   }
 }
 
-export default dropdown(DropLog);
+export default Login;
