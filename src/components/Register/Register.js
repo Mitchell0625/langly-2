@@ -36,6 +36,7 @@ class Register extends Component {
     });
     return (
       <div className="register">
+        <p>I want to learn ...</p>
         <div className="register__div">{viewLanguages}</div>
       </div>
     );
