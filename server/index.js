@@ -31,6 +31,12 @@ app.use(
   })
 );
 
+//auth
+const requireAuth = passport.authenticate("jwt", { session: false });
+const auth = express.Router();
+
+auth.get("/", requireAuth, (req, res) => res.redirect("/welcome"));
+
 app.get("/api/getlang", lc.getLanguages);
 app.post("/api/createuser", uc.createUser);
 

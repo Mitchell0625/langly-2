@@ -7,4 +7,6 @@
   background-position: center;
   background-size: cover;
   @extend %flex-column-center;
+
+  justify-content: space-between;
 }
