@@ -1,9 +1,9 @@
-import React, { Component } from "react";
-import axios from "axios";
-import { connect } from "react-redux";
-import Languages from "../Languages/Languages";
-import { selectLanguage } from "../../ducks/registerReducer";
-import "./Register.css";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import Languages from '../Languages/Languages';
+import { selectLanguage } from '../../ducks/registerReducer';
+import './Register.css';
 
 class Register extends Component {
   state = {
@@ -12,7 +12,7 @@ class Register extends Component {
 
   componentDidMount = () => {
     axios
-      .get("/api/getlang")
+      .get('/api/getlang')
       .then(resp => {
         this.setState(() => ({ languages: resp.data }));
       })
@@ -21,6 +21,7 @@ class Register extends Component {
   selectLanguage = (id, title) => {
     this.props.selectLanguage({ id, title });
   };
+
   setSession() {}
   render() {
     console.log(this.props);

@@ -1,12 +1,28 @@
-@import "../../utils.scss";
+@import '../../utils.scss';
 
 .landing {
   width: 100%;
   height: 100%;
-  background-image: url("../../images/unsplash.jpg");
+  background-image: url('../../images/unsplash.jpg');
   background-position: center;
   background-size: cover;
-  @extend %flex-column-center;
+  filter: sepia(20%);
+  color: white;
+}
 
-  justify-content: space-between;
+.landing__div {
+  margin-top: 30vh;
+
+  p {
+    display: none;
+  }
+}
+
+.small {
+  display: none;
+}
+@media (max-width: 767px) {
+  .landing__div p {
+    display: block;
+  }
 }

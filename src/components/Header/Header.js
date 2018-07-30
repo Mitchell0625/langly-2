@@ -1,19 +1,18 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./Header.css";
+import React from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
 
-const Header = () => {
-  return (
+const Header = () => (
     <div className="header">
       <Link to="/">
         <h1 className="header__h1">langly</h1>
       </Link>
 
       <div className="header__div">
-        {window.location.pathname === "/" ? (
+        {window.location.pathname === '/' ? (
           <div>
             <p className="header__option">
-              Site language:{" "}
+              Site language:{' '}
               <span>
                 <select>
                   <option value="English">English</option>
@@ -23,14 +22,13 @@ const Header = () => {
             <button>Login</button>
           </div>
         ) : (
-          ""
+          ''
         )}
-        {window.location.pathname === "/register" && (
+        {window.location.pathname === '/register' && (
           <button>Create profile</button>
         )}
       </div>
     </div>
   );
-};
 
 export default Header;

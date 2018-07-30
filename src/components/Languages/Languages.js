@@ -1,6 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import "./Languages.css";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
+import './Languages.css';
 
 const propTypes = {
   id: PropTypes.number.isRequired,
@@ -10,9 +11,11 @@ const propTypes = {
 
 const Languages = ({ id, title, selectLang }) => {
   return (
-    <div className="languages" onClick={() => selectLang(id, title)}>
-      <h3>{title}</h3>
-    </div>
+    <Link to="/welcome">
+      <div className="languages" onClick={() => selectLang(id, title)}>
+        <h3>{title}</h3>
+      </div>
+    </Link>
   );
 };
 
