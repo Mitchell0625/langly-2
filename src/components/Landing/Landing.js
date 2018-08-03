@@ -8,14 +8,11 @@ const Landing = () => (
   <div className="landing">
     <Header />
     <div className="landing__div">
-      <div>
-        <h2>Learn a language for free. Forever.</h2>
-        <Link to="/register">Get Started</Link>
-        <p>I already have an account</p>
-      </div>
-      <div className="landing__footer small">
-        <Footer />
-      </div>
+      <h2>Learn a language for free. Forever.</h2>
+      <Link to="/register" className="landing__button">
+        Get Started
+      </Link>
+      <p>I already have an account</p>
     </div>
   </div>
 );
