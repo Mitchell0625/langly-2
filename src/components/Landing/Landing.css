@@ -11,6 +11,8 @@
   margin-top: 30vh; }
   .landing__div p {
     display: none; }
+  .landing__div h2 {
+    font-size: 40px; }
 
 .small {
   display: none; }

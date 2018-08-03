@@ -19,37 +19,42 @@ class Goal extends Component {
     return (
       <div>
         <form onSubmit={this.selectGoal}>
-          <input
-            name="goal"
-            type="radio"
-            value="50 xp"
-            onChange={e => this.handleGoal(e.target.value)}
-          />
-          <p>50 xp</p>
-
-          <input
-            name="goal"
-            type="radio"
-            value="30 xp"
-            onChange={e => this.handleGoal(e.target.value)}
-          />
-          <p>30 xp</p>
-
-          <input
-            name="goal"
-            type="radio"
-            value="20 xp"
-            onChange={e => this.handleGoal(e.target.value)}
-          />
-          <p>20 xp</p>
-
-          <input
-            name="goal"
-            type="radio"
-            value="10 xp"
-            onChange={e => this.handleGoal(e.target.value)}
-          />
-          <p>10 xp</p>
+          <label>
+            <input
+              name="goal"
+              type="radio"
+              value="50 xp"
+              onChange={e => this.handleGoal(e.target.value)}
+            />
+            50 XP
+          </label>
+          <label>
+            <input
+              name="goal"
+              type="radio"
+              value="30 xp"
+              onChange={e => this.handleGoal(e.target.value)}
+            />
+            30 XP
+          </label>
+          <label>
+            <input
+              name="goal"
+              type="radio"
+              value="20 xp"
+              onChange={e => this.handleGoal(e.target.value)}
+            />
+            20 XP
+          </label>
+          <label>
+            <input
+              name="goal"
+              type="radio"
+              value="10 xp"
+              onChange={e => this.handleGoal(e.target.value)}
+            />
+            10 XP
+          </label>
           <button type="submit" value="Submit">
             Set Goal
           </button>

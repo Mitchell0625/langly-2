@@ -16,11 +16,16 @@
   p {
     display: none;
   }
+
+  h2 {
+    font-size: 40px;
+  }
 }
 
 .small {
   display: none;
 }
+
 @media (max-width: 767px) {
   .landing__div p {
     display: block;
