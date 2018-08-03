@@ -1,10 +1,10 @@
-require("dotenv").config();
-const express = require("express");
-const { json } = require("body-parser");
-const massive = require("massive");
-const bcrypt = require("bcrypt");
-const session = require("express-session");
-const passport = require("passport");
+require('dotenv').config();
+const express = require('express');
+const { json } = require('body-parser');
+const massive = require('massive');
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const passport = require('passport');
 const port = 4004;
 
 //controllers
@@ -15,7 +15,7 @@ const app = express();
 
 massive(process.env.CONNECTION_STRING)
   .then(db => {
-    app.set("db", db);
+    app.set('db', db);
   })
   .catch(console.log);
 
@@ -31,14 +31,8 @@ app.use(
   })
 );
 
-//auth
-const requireAuth = passport.authenticate("jwt", { session: false });
-const auth = express.Router();
-
-auth.get("/", requireAuth, (req, res) => res.redirect("/welcome"));
-
-app.get("/api/getlang", lc.getLanguages);
-app.post("/api/createuser", uc.createUser);
+app.get('/api/getlang', lc.getLanguages);
+app.post('/api/createuser', uc.createUser);
 
 app.listen(port, () => {
   console.log(`Langly working on port ${port}`);
