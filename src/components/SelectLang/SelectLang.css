@@ -1,16 +1,16 @@
-.register__div {
+.selectlang__div {
   display: flex;
   align-items: center; }
 
-.register {
+.selectlang {
   padding-top: 100px;
   width: 80%;
   margin: auto; }
 
-.register__div {
+.selectlang__div {
   margin: 10px;
   height: 100%;
   justify-content: space-around;
   flex-wrap: wrap; }
 
-/*# sourceMappingURL=Register.css.map */
+/*# sourceMappingURL=SelectLang.css.map */

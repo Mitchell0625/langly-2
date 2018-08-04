@@ -3,9 +3,9 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import Languages from '../Languages/Languages';
 import { selectLanguage } from '../../ducks/registerReducer';
-import './Register.css';
+import './SelectLang.css';
 
-class Register extends Component {
+class SelectLang extends Component {
   state = {
     languages: []
   };
@@ -20,9 +20,12 @@ class Register extends Component {
   };
   selectLanguage = (id, title) => {
     this.props.selectLanguage({ id, title });
+    this.setLanguage(title);
   };
 
-  setSession() {}
+  setLanguage(item) {
+    localStorage.setItem('learnLanguage', item);
+  }
   render() {
     console.log(this.props);
     const viewLanguages = this.state.languages.map((e, i) => {
@@ -36,9 +39,9 @@ class Register extends Component {
       );
     });
     return (
-      <div className="register">
+      <div className="selectlang">
         <p>I want to learn ...</p>
-        <div className="register__div">{viewLanguages}</div>
+        <div className="selectlang__div">{viewLanguages}</div>
       </div>
     );
   }
@@ -50,4 +53,4 @@ function mapStateToProps(state) {
 export default connect(
   mapStateToProps,
   { selectLanguage }
-)(Register);
+)(SelectLang);

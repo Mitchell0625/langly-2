@@ -1,11 +1,11 @@
-@import "../../utils.scss";
+@import '../../utils.scss';
 
-.register {
+.selectlang {
   padding-top: 100px;
   width: 80%;
   margin: auto;
 }
-.register__div {
+.selectlang__div {
   margin: 10px;
   height: 100%;
   @extend %flex-row-align-center;
