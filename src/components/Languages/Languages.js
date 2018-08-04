@@ -11,7 +11,7 @@ const propTypes = {
 
 const Languages = ({ id, title, selectLang }) => {
   return (
-    <Link to="/welcome">
+    <Link to="/content">
       <div className="languages" onClick={() => selectLang(id, title)}>
         <h3>{title}</h3>
       </div>

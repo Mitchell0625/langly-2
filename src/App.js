@@ -5,7 +5,7 @@ import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
-import Goal from './components/Register/Welcome/Goal';
+import Dashboard from './components/Dashboard/Dashboard';
 
 class App extends Component {
   render() {
@@ -17,7 +17,7 @@ class App extends Component {
           <Route exact path="/" component={Landing} />
           <Route path="/register" component={Register} />
           <Route path="/login" component={Login} />
-          <Route path="/welcome" component={Goal} />
+          <Route path="/content" component={Dashboard} />
         </Switch>
       </div>
     );

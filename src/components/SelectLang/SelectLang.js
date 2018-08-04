@@ -23,9 +23,9 @@ class SelectLang extends Component {
     this.setLanguage(title);
   };
 
-  setLanguage(item) {
+  setLanguage = item => {
     localStorage.setItem('learnLanguage', item);
-  }
+  };
   render() {
     console.log(this.props);
     const viewLanguages = this.state.languages.map((e, i) => {
