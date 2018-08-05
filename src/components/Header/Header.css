@@ -1,4 +1,4 @@
-.header, .header__div {
+.header, .header__logo, .header__div {
   display: flex;
   align-items: center; }
 
@@ -8,6 +8,9 @@
   .header a {
     color: #333;
     text-decoration: none; }
+
+.header__img {
+  width: 50px; }
 
 .header__h1 {
   font-size: 40px; }

@@ -12,6 +12,12 @@
   }
 }
 
+.header__logo {
+  @extend %flex-row-align-center;
+}
+.header__img {
+  width: 50px;
+}
 .header__h1 {
   font-size: 40px;
 }

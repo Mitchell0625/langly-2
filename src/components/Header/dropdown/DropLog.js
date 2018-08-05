@@ -1,14 +1,13 @@
-import React, { Component } from "react";
-import dropdown from "./dropdown";
+import React, { Component } from 'react';
 
 class DropLog extends Component {
   state = {
-    username: "",
-    password: ""
+    username: '',
+    password: ''
   };
   render() {
     return (
-      <div>
+      <div className="droplog">
         <button>Sign In with Google</button>
         <button>Sign In with Facebook</button>
         <p>or</p>
@@ -19,4 +18,4 @@ class DropLog extends Component {
   }
 }
 
-export default dropdown(DropLog);
+export default DropLog;

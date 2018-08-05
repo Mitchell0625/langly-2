@@ -9,8 +9,7 @@ class Register extends Component {
   };
 
   handleInput = e => {
-    this.setState(() => ({ [e.target.name]: e.target.value }));
-    e.persist();
+    this.setState({ [e.target.name]: e.target.value });
   };
 
   handleSubmit = e => {
