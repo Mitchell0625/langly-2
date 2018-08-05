@@ -1,0 +1,12 @@
+.droplog {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.droplog {
+  border-radius: 4px;
+  padding: 5px; }
+  .droplog input {
+    margin-bottom: 5px; }
+
+/*# sourceMappingURL=DropLog.css.map */

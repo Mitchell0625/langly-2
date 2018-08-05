@@ -1,0 +1,12 @@
+@import '../../../../utils.scss';
+
+.droplog {
+  @extend %flex-column-center;
+
+  border-radius: 4px;
+  padding: 5px;
+
+  input {
+    margin-bottom: 5px;
+  }
+}

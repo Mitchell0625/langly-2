@@ -1,6 +1,9 @@
-.header, .header__logo, .header__div {
+.header, .header__logo, .header__div, .header__div div {
   display: flex;
   align-items: center; }
+
+.header__overlay {
+  z-index: 2; }
 
 .header {
   justify-content: space-between;
@@ -33,5 +36,13 @@
     .lang:hover ul li {
       list-style: none;
       margin: 5px; }
+
+.header__overlay {
+  position: absolute;
+  width: 200px;
+  margin-left: 3%;
+  margin-top: 7%;
+  border: 1px solid #333;
+  background-color: lightgray; }
 
 /*# sourceMappingURL=Header.css.map */

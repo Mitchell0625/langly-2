@@ -26,6 +26,10 @@
   @extend %flex-row-align-center;
 
   justify-content: space-around;
+
+  div {
+    @extend %flex-row-align-center;
+  }
 }
 
 .lang {
@@ -48,4 +52,15 @@
       margin: 5px;
     }
   }
+}
+
+.header__overlay {
+  @extend %overlay;
+
+  position: absolute;
+  width: 200px;
+  margin-left: 3%;
+  margin-top: 7%;
+  border: 1px solid #333;
+  background-color: lightgray;
 }

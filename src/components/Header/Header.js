@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import parrot from '../../images/parrot.png';
 import './Header.css';
-import DropLog from './dropdown/DropLog';
+import DropLog from './dropdown/DropLog/DropLog';
 import dropdown from './dropdown/dropdown';
 
 class Header extends React.Component {
@@ -30,9 +30,10 @@ class Header extends React.Component {
                   </select>
                 </span>
               </p>
-              <button onClick={this.props.toggler}>Login</button>
+              <button onMouseOver={this.props.toggler}>Login</button>
               {this.props.toggle && (
-                <span>
+                <span className="header__overlay">
+                  <button onClick={this.props.toggler}>x</button>
                   <DropLog />
                 </span>
               )}

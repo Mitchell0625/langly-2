@@ -14,6 +14,11 @@ const dropdown = WrappedComponent => {
       this.setState(() => ({ toggle: !this.state.toggle }));
       console.log(this.state.toggle);
     };
+
+    // clickOutside(){
+    //   if(this.state.toggle && )
+    // }
+
     render() {
       const otherProps = {
         toggle: this.state.toggle,
