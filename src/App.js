@@ -3,7 +3,7 @@ import './App.css';
 import { Switch, Route, withRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
-import Register from './components/Register/Register';
+import SelectLang from './components/SelectLang/SelectLang';
 import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 
@@ -15,7 +15,7 @@ class App extends Component {
 
         <Switch>
           <Route exact path="/" component={Landing} />
-          <Route path="/register" component={Register} />
+          <Route path="/register" component={SelectLang} />
           <Route path="/login" component={Login} />
           <Route path="/content" component={Dashboard} />
         </Switch>

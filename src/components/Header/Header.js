@@ -19,7 +19,7 @@ class Header extends React.Component {
         <div className="header__div">
           {window.location.pathname === '/' ? (
             <div>
-              <p className="header__option">
+              <p onMouseOver={this.props.toggler} className="header__option">
                 Site language:{' '}
                 <span>
                   <select>
@@ -30,9 +30,14 @@ class Header extends React.Component {
                   </select>
                 </span>
               </p>
-              <button onMouseOver={this.props.toggler}>Login</button>
+              <button
+                className="header-button"
+                onMouseOver={this.props.toggler}
+              >
+                Login
+              </button>
               {this.props.toggle && (
-                <span className="header__overlay">
+                <span className="header__overlay login-overlay">
                   <button onClick={this.props.toggler}>x</button>
                   <DropLog />
                 </span>
@@ -41,8 +46,12 @@ class Header extends React.Component {
           ) : (
             ''
           )}
-          {window.location.pathname === '/register' && (
-            <button>Create profile</button>
+          {window.location.pathname !== '/' && (
+            <Link to="/content">
+              <button className="header__button header__button-active">
+                Create profile
+              </button>
+            </Link>
           )}
         </div>
       </div>

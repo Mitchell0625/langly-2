@@ -58,9 +58,23 @@
   @extend %overlay;
 
   position: absolute;
+  border: 1px solid #333;
+  background-color: lightgray;
+}
+
+.login-overlay {
   width: 200px;
   margin-left: 3%;
   margin-top: 7%;
+}
+
+.header__button {
+  padding: 10px 30px;
   border: 1px solid #333;
-  background-color: lightgray;
+  border-radius: 40px;
+}
+
+.header__button-active:hover {
+  background-color: #333;
+  color: white;
 }

@@ -54,6 +54,9 @@ class Register extends Component {
             Submit Profile
           </button>
         </form>
+        <p>
+          Already have an account? <span>Sign In</span>
+        </p>
       </div>
     );
   }

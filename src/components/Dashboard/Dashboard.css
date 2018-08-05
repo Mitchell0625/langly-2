@@ -1,0 +1,14 @@
+.dashboard__overlay {
+  z-index: 2; }
+
+.dashboard {
+  height: 100vh; }
+
+.dashboard__overlay {
+  position: absolute;
+  margin-left: 20%;
+  border: 2px solid #333;
+  border-radius: 3px;
+  background-color: ghostwhite; }
+
+/*# sourceMappingURL=Dashboard.css.map */
