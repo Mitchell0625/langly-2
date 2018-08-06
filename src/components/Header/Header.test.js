@@ -1,23 +1,35 @@
 import React from 'react';
-import { shallow } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 import Header from './Header';
+import parrot from '../../images/parrot.png';
 
 it('renders without crashing', () => {
   shallow(<Header />);
 });
 
 it('renders logo', () => {
-  const wrapper = shallow(<Header />);
-  const logo = <h1 className="header__h1">langly</h1>;
-  expect(wrapper.contains(logo)).toEqual(true);
+  const wrapper = mount(
+    <div className="header__logo">
+      <img src={parrot} className="header__img" />
+      <h1 className="header__h1">langly</h1>
+    </div>
+  );
+
+  expect(
+    wrapper.containsMatchingElement([
+      <img src={parrot} className="header__img" />
+    ])
+  ).toEqual(true);
 });
 
-// it("has selection box", () => {
-//   const wrapper = shallow(<Header />);
-//   const selector = (
-//     <select>
-//       <option value="English">English</option>
-//     </select>
-//   );
-//   expect(wrapper.contains(selector)).toEqual(true);
+//not sure how to test props
+// it('contains login button', () => {
+//   const wrapper = shallow(<Header toggler={10} />);
+//   expect(
+//     wrapper.containsMatchingElement(
+//       <button className="header-button" onMouseOver={this.props.toggler}>
+//         Login
+//       </button>
+//     )
+//   ).toEqual(true);
 // });

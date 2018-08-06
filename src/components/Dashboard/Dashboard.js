@@ -11,12 +11,12 @@ class Dashboard extends Component {
     switch: false
   };
   componentDidMount = () => {
-    let hasLang = localStorage.getItem('learnlanguage');
-    if (hasLang) {
-      this.setState(() => {
-        learning: hasLang;
-      });
-    }
+    // let hasLang = window.localStorage.getItem('learnlanguage');
+    // if (hasLang) {
+    //   this.setState(() => {
+    //     learning: hasLang;
+    //   });
+    // }
     this.props.toggler();
 
     this.setState(() => ({ background: 'gray' }));
