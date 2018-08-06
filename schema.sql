@@ -6,3 +6,6 @@
 -- INSERT INTO languages (title)
 -- VALUES('English'),
 -- ('French'), ('Spanish'),('Mandarin'), ('Italian')
+
+-- ALTER TABLE languages
+-- ADD COLUMN flag TEXT;

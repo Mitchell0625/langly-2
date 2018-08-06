@@ -34,6 +34,7 @@ class SelectLang extends Component {
           key={i}
           id={e.id}
           title={e.title}
+          flag={e.flag}
           selectLang={this.selectLanguage}
         />
       );
