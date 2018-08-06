@@ -36,6 +36,10 @@ class Login extends Component {
           </div>
           <button className="login__form__button">Login</button>
         </form>
+        <p>
+          Need to create an account?{' '}
+          <span onClick={() => this.props.toggleRegister()}>Sign Up</span>
+        </p>
       </div>
     );
   }

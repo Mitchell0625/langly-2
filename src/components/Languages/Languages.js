@@ -14,7 +14,7 @@ const Languages = ({ id, title, flag, selectLang }) => {
   return (
     <Link to="/content">
       <div className="languages" onClick={() => selectLang(id, title)}>
-        <h3>{title}</h3>
+        <h3 className="languages__title">{title}</h3>
         <img src={flag} alt="language flag" />
       </div>
     </Link>

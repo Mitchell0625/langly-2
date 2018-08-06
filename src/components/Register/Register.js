@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './Register.css';
+
+const propTypes = {
+  toggleLogin: PropTypes.func.isRequired
+};
 
 class Register extends Component {
   constructor(props) {
@@ -81,4 +86,5 @@ class Register extends Component {
   }
 }
 
+Register.propTypes = propTypes;
 export default Register;
