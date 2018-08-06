@@ -1,24 +1,25 @@
-.register__form, .register__form__fields {
+.login__form, .login__form__fields {
   display: flex;
   flex-direction: column;
   justify-content: center; }
 
-.register {
+.login {
   padding: 20px; }
-  .register h2 {
+  .login h2 {
     margin-bottom: 45px; }
 
-.register__form__fields {
+.login__form__fields {
   margin-bottom: 10px;
   align-items: flex-start; }
-  .register__form__fields input {
+  .login__form__fields input {
     padding: 10px 20px;
     border-bottom: 1px solid #333; }
 
-.register__form__button {
+.login__form__button {
   background-color: #2671da;
   border-radius: 25px;
   color: white;
-  padding: 10px 30px; }
+  padding: 10px 30px;
+  margin-top: 20px; }
 
-/*# sourceMappingURL=Register.css.map */
+/*# sourceMappingURL=Login.css.map */
