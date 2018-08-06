@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import Register from '../Register/Register';
+import Login from '../Login/Login';
 import dropdown from '../Header/dropdown/dropdown';
 import './Dashboard.css';
 
 class Dashboard extends Component {
   state = {
     learning: '',
-    background: 'white'
+    background: 'white',
+    switch: false
   };
   componentDidMount = () => {
     let hasLang = localStorage.getItem('learnlanguage');
@@ -27,6 +29,14 @@ class Dashboard extends Component {
     this.setState(() => ({ background: 'white' }));
   };
 
+  toggleLogin = () => {
+    this.setState({ switch: true });
+  };
+
+  toggleRegister = () => {
+    this.setState({ switch: false });
+  };
+
   //api call to translate based on this.state.learning
   render() {
     return (
@@ -37,8 +47,17 @@ class Dashboard extends Component {
         <h1>Dashboard</h1>
         {this.props.toggle && (
           <div className="dashboard__overlay">
-            <button onClick={() => this.signInOverlay()}>&times;</button>
-            <Register />
+            <button
+              className="dashboard__overlay__close"
+              onClick={() => this.signInOverlay()}
+            >
+              &times;
+            </button>
+            {this.state.switch ? (
+              <Login toggleRegister={this.toggleRegister} />
+            ) : (
+              <Register toggleLogin={this.toggleLogin} />
+            )}
           </div>
         )}
       </div>

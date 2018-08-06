@@ -1,0 +1,29 @@
+@import '../../utils.scss';
+
+.register {
+  padding: 20px;
+
+  h2 {
+    margin-bottom: 45px;
+  }
+}
+.register__form {
+  @extend %flex-column-center;
+}
+
+.register__form__fields {
+  margin-bottom: 10px;
+  @extend %flex-column-center;
+
+  align-items: flex-start;
+
+  input {
+    padding: 10px 20px;
+    border-bottom: 1px solid #333;
+  }
+  p {
+  }
+}
+
+// .register__form__button {
+// }
