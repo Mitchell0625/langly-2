@@ -21,7 +21,7 @@ const signup = (req, res, next) => {
     .hash(password, saltRounds)
     .then(hash => {
       return db
-        .createUser(email, hash)
+        .create_user([email, hash])
         .then(newUser => {
           res.json({ token: generateToken(newUser) });
         })
@@ -33,3 +33,7 @@ const signup = (req, res, next) => {
       return next(err);
     });
 };
+
+module.exports = {
+  signin, signup
+}

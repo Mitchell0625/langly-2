@@ -3,7 +3,8 @@ import axios from 'axios';
 const initialState = {
   language: {},
   goal: '',
-  languages: []
+  languages: [],
+  isLoading: false
 };
 
 const GET_LANGUAGES = 'GET_LANGUAGES';
@@ -32,7 +33,12 @@ export function selectGoal(goal) {
 
 export default function registerReducer(state = initialState, action) {
   switch (action.type) {
-    case `${GET_LANGUAGES}__FULFILLED`:
+    case `${GET_LANGUAGES}_PENDING`:
+      return {
+        ...state,
+        isLoading: true
+      };
+    case `${GET_LANGUAGES}_FULFILLED`:
       return {
         ...state,
         languages: action.payload.data

@@ -1,3 +1,3 @@
-INSERT INTO langusers (email, password)
+INSERT INTO langusers (email, passcode)
 VALUES($1, $2)
 RETURNING *;

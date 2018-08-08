@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
 import Languages from '../Languages/Languages';
-import { selectLanguage } from '../../ducks/registerReducer';
+import { selectLanguage, getLanguages } from '../../ducks/registerReducer';
 import './SelectLang.css';
 
 class SelectLang extends Component {
@@ -11,12 +11,7 @@ class SelectLang extends Component {
   };
 
   componentDidMount = () => {
-    axios
-      .get('/api/getlang')
-      .then(resp => {
-        this.setState(() => ({ languages: resp.data }));
-      })
-      .catch(err => console.log(err));
+    this.props.getLanguages();
   };
   selectLanguage = (id, title) => {
     this.props.selectLanguage({ id, title });
@@ -28,7 +23,7 @@ class SelectLang extends Component {
   };
   render() {
     console.log(this.props);
-    const viewLanguages = this.state.languages.map((e, i) => {
+    const viewLanguages = this.props.languages.map((e, i) => {
       return (
         <Languages
           key={i}
@@ -53,5 +48,5 @@ function mapStateToProps(state) {
 }
 export default connect(
   mapStateToProps,
-  { selectLanguage }
+  { selectLanguage, getLanguages }
 )(SelectLang);

@@ -9,3 +9,9 @@
 
 -- ALTER TABLE languages
 -- ADD COLUMN flag TEXT;
+
+-- CREATE TABLE langusers (
+--     id SERIAL PRIMARY KEY,
+--     email VARCHAR(200),
+--     passcode VARCHAR(200)
+-- )

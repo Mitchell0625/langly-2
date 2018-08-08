@@ -3,13 +3,14 @@ const express = require('express');
 const { json } = require('body-parser');
 const massive = require('massive');
 const bcrypt = require('bcrypt');
-const session = require('express-session');
 const passport = require('passport');
 const port = 4004;
 
+const auth = require(`${__dirname}/authentication`);
 //controllers
 const lc = require(`${__dirname}/controllers/languageCtrl`);
 const uc = require(`${__dirname}/controllers/userCtrl`);
+const ac = require(`${__dirname}/controllers/authCtrl`);
 
 const app = express();
 
@@ -20,17 +21,30 @@ massive(process.env.CONNECTION_STRING)
   .catch(console.log);
 
 app.use(json());
-app.use(
-  session({
-    secret: process.env.SESSION_SECRET,
-    resave: false,
-    saveUninitialized: false,
-    cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 2
-    }
-  })
-);
+passport.use(auth.localLogin);
+passport.use(auth.jwtLogin);
 
+//auth middleware
+const requireAuth = passport.authenticate('jwt', { session: false });
+const requireSignIn = passport.authenticate('local', { session: false })
+
+//Get Authenticated routes
+const getAuth = express.Router();
+getAuth.get('/', requireAuth, (req, res) => res.redirect('/user'))
+getAuth.use('/', ac.signin);
+
+//Sign In routes
+const signed = express.Router();
+signed.get('/sign-up', (req, res) => {
+  res.render('authentication/sign-up')
+});
+signed.post('/sign-up', ac.signup);
+signed.get('/sign-in', (req, res) => {
+  res.render('authentication/sign-in');
+})
+signed.post('/sign-in', requireSignIn, ac.signin);
+
+//Regular Routes
 app.get('/api/getlang', lc.getLanguages);
 app.post('/api/createuser', uc.createUser);
 
