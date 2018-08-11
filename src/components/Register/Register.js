@@ -14,13 +14,23 @@ class Register extends Component {
       name: '',
       email: '',
       password: '',
-      confirmPass: ''
+      confirmPass: '',
+      flag: false
     };
   }
 
   handleInput = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+  matchingPass = () => {
+    const { password, confirmPass } = this.state;
+    if (password !== '' && password !== confirmPass) {
+      this.setState({ flag: true })
+    } else {
+      this.setState({ flag: false })
+    }
+  }
 
   handleSubmit = e => {
     console.log('submit');

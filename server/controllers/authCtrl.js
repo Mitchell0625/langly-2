@@ -9,17 +9,22 @@ const generateToken = user => {
 };
 
 const signin = (req, res, next) => {
-  res.send({ token: generateToken(req.user) });
+  const db = req.app.get("db");
+  const { email, password } = req.body;
+  db.login_user([email]).then((data) => {
+    res.send({ token: generateToken(req.user) })
+  }).catch(err => console.log(err))
 };
 
 const signup = (req, res, next) => {
   const db = req.app.get("db");
   const { email, password } = req.body;
   const saltRounds = 12;
-
+  console.log(email);
   bcrypt
     .hash(password, saltRounds)
     .then(hash => {
+      console.log('hit');
       return db
         .create_user([email, hash])
         .then(newUser => {

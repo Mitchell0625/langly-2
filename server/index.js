@@ -29,20 +29,13 @@ const requireAuth = passport.authenticate('jwt', { session: false });
 const requireSignIn = passport.authenticate('local', { session: false })
 
 //Get Authenticated routes
-const getAuth = express.Router();
-getAuth.get('/', requireAuth, (req, res) => res.redirect('/user'))
-getAuth.use('/', ac.signin);
+// const getAuth = express.Router();
+// getAuth.get('/', requireAuth, (req, res) => res.redirect('/user'))
+// getAuth.use('/', ac.signin);
 
 //Sign In routes
-const signed = express.Router();
-signed.get('/sign-up', (req, res) => {
-  res.render('authentication/sign-up')
-});
-signed.post('/sign-up', ac.signup);
-signed.get('/sign-in', (req, res) => {
-  res.render('authentication/sign-in');
-})
-signed.post('/sign-in', requireSignIn, ac.signin);
+app.post('/sign-up', requireAuth, ac.signup);
+app.post('/sign-in', requireSignIn, ac.signin);
 
 //Regular Routes
 app.get('/api/getlang', lc.getLanguages);

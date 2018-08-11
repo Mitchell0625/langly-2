@@ -23,6 +23,7 @@ class Login extends Component {
               type="email"
               placeholder="username"
               onChange={this.handleInput}
+              required
             />
           </div>
           <div className="login__form__fields">
@@ -32,6 +33,7 @@ class Login extends Component {
               type="password"
               placeholder="password"
               onChange={this.handleInput}
+              required
             />
           </div>
           <button className="login__form__button">Login</button>
