@@ -2,11 +2,8 @@
 
 .register {
   padding: 20px;
-
-  h2 {
-    margin-bottom: 45px;
-  }
 }
+
 .register__form {
   @extend %flex-column-center;
 }

@@ -14,7 +14,6 @@ class Login extends Component {
   render() {
     return (
       <div className="login">
-        <h2>Sign In</h2>
         <form className="login__form">
           <div className="login__form__fields">
             <p>Username/Email</p>

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Dropzone from 'react-dropzone';
+import Text from './Text/Text';
+import './Upload.css';
 
 
 class Upload extends Component {
@@ -13,12 +15,18 @@ class Upload extends Component {
         console.log('These were rejected:', rejected);
     }
 
+    showText = () => { }
+
     render() {
         return (
             <div className='upload'>
-                <Dropzone accept='application/pdf' onDrop={this.onDrop}>
-                    <p>Drop pdf here or click to select files to upload</p>
-                </Dropzone>
+                <div className='upload__dropzone__div'>
+                    <Dropzone accept='application/pdf, application/msword' onDrop={this.onDrop}>
+                        <p>Drop files here or click to select files to upload</p>
+                        <p>Only .pdf and .docx files will be accepted</p>
+                    </Dropzone>
+                </div>
+                <Text file={this.state.accepted} />
             </div>
         )
     }

@@ -39,7 +39,7 @@ class Register extends Component {
   render() {
     return (
       <div className="register">
-        <h2>Sign Up</h2>
+
         <form className="register__form" onSubmit={this.handleSubmit}>
           <div className="register__form__fields">
             <p>Name</p>

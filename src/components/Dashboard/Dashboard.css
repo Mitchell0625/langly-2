@@ -2,17 +2,30 @@
   z-index: 2; }
 
 .dashboard {
-  height: 100vh; }
+  height: 100vh;
+  padding: 40px 20px; }
+  .dashboard h1 {
+    font-size: 30px; }
 
 .dashboard__overlay {
   position: absolute;
-  margin-left: 20%;
+  left: 35%;
   border: 2px solid #333;
   border-radius: 3px;
-  background-color: ghostwhite; }
+  background-color: ghostwhite;
+  padding: 20px 10px;
+  min-height: 45vh; }
 
-.dashboard__overlay__close {
-  position: absolute;
-  margin-left: 43%; }
+.dashboard__overlay__top {
+  display: flex;
+  justify-content: space-between; }
+
+.dashboard__overlay__buttons {
+  background-color: #2671dab8;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 18px;
+  margin-right: 10px;
+  font-size: 16px; }
 
 /*# sourceMappingURL=Dashboard.css.map */

@@ -2,18 +2,38 @@
 
 .dashboard {
   height: 100vh;
+  padding: 40px 20px;
+
+  h1 {
+    font-size: 30px;
+  }
 }
 .dashboard__overlay {
   @extend %overlay;
 
   position: absolute;
-  margin-left: 20%;
+  left:35%;
   border: 2px solid #333;
   border-radius: 3px;
   background-color: ghostwhite;
+  padding: 20px 10px;
+  min-height: 45vh;
 }
 
-.dashboard__overlay__close {
-  position: absolute;
-  margin-left: 43%;
+.dashboard__overlay__top{
+  display: flex;
+  justify-content: space-between;
 }
+.dashboard__overlay__close {
+  
+}
+
+.dashboard__overlay__buttons {
+  background-color: #2671dab8;
+  border-radius: 20px;
+  color: white;
+  padding: 8px 18px;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
