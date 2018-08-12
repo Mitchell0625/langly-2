@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
+import Upload from '../Upload/Upload';
 import dropdown from '../Header/dropdown/dropdown';
 import './Dashboard.css';
 
@@ -56,10 +57,11 @@ class Dashboard extends Component {
             {this.state.switch ? (
               <Login toggleRegister={this.toggleRegister} />
             ) : (
-              <Register toggleLogin={this.toggleLogin} />
-            )}
+                <Register toggleLogin={this.toggleLogin} />
+              )}
           </div>
         )}
+        <Upload />
       </div>
     );
   }
