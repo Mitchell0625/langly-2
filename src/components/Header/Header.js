@@ -19,7 +19,7 @@ class Header extends React.Component {
         <div className="header__div">
           {window.location.pathname === '/' ? (
             <div>
-              <p onMouseOver={this.props.toggler} className="header__option">
+              <p className="header__option">
                 Site language:{' '}
                 <span>
                   <select>
@@ -44,8 +44,8 @@ class Header extends React.Component {
               )}
             </div>
           ) : (
-            ''
-          )}
+              ''
+            )}
           {window.location.pathname !== '/' && (
             <Link to="/content">
               <button className="header__button header__button-active">

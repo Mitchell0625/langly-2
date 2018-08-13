@@ -1,4 +1,4 @@
-.header, .header__logo, .header__div, .header__div div {
+.header, .header__logo, .header__div > div {
   display: flex;
   align-items: center; }
 
@@ -7,7 +7,8 @@
 
 .header {
   justify-content: space-between;
-  padding: 10px 40px; }
+  padding: 10px 40px;
+  background-color: #00d56b80; }
   .header a {
     color: #333;
     text-decoration: none; }
@@ -17,9 +18,6 @@
 
 .header__h1 {
   font-size: 40px; }
-
-.header__div {
-  justify-content: space-around; }
 
 .lang {
   display: hidden; }

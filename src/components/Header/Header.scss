@@ -5,6 +5,7 @@
 
   justify-content: space-between;
   padding: 10px 40px;
+  background-color: #00d56b80;
 
   a {
     color: #333;
@@ -22,14 +23,8 @@
   font-size: 40px;
 }
 
-.header__div {
+.header__div > div {
   @extend %flex-row-align-center;
-
-  justify-content: space-around;
-
-  div {
-    @extend %flex-row-align-center;
-  }
 }
 
 .lang {

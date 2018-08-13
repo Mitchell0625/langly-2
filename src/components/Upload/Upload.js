@@ -21,7 +21,7 @@ class Upload extends Component {
         return (
             <div className='upload'>
                 <div className='upload__dropzone__div'>
-                    <Dropzone accept='application/pdf, application/msword' onDrop={this.onDrop}>
+                    <Dropzone className='dropzone' accept='application/pdf, application/msword' onDrop={this.onDrop}>
                         <p>Drop files here or click to select files to upload</p>
                         <p>Only .pdf and .docx files will be accepted</p>
                     </Dropzone>

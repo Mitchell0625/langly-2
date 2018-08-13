@@ -3,9 +3,10 @@
 
 .dashboard {
   height: 100vh;
-  padding: 40px 20px; }
+  margin: 20px; }
   .dashboard h1 {
-    font-size: 30px; }
+    font-size: 30px;
+    margin-bottom: 60px; }
 
 .dashboard__overlay {
   position: absolute;
@@ -16,12 +17,14 @@
   padding: 20px 10px;
   min-height: 45vh; }
 
-.dashboard__overlay__top {
-  display: flex;
-  justify-content: space-between; }
+.dashboard__overlay__close {
+  background-color: transparent;
+  outline: none;
+  font-size: 30px;
+  float: right; }
 
 .dashboard__overlay__buttons {
-  background-color: #2671dab8;
+  background-color: #FFD000;
   border-radius: 20px;
   color: white;
   padding: 8px 18px;

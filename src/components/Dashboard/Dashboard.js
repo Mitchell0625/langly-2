@@ -48,18 +48,13 @@ class Dashboard extends Component {
         <h1>Dashboard</h1>
         {this.props.toggle && (
           <div className="dashboard__overlay">
-            <div className='dashboard__overlay__top'>
-              <div className='dashboard__overlay__buttons__div'>
-                <button className='dashboard__overlay__buttons' onClick={this.toggleRegister}>Sign Up</button>
-                <button className='dashboard__overlay__buttons' onClick={this.toggleLogin}>Sign In</button>
-              </div>
-              <button
-                className="dashboard__overlay__close"
-                onClick={() => this.signInOverlay()}
-              >
-                &times;
+            <button
+              className="dashboard__overlay__close"
+              onClick={() => this.signInOverlay()}
+            >
+              &times;
             </button>
-            </div>
+
             {this.state.switch ? (
               <Login toggleRegister={this.toggleRegister} />
             ) : (
