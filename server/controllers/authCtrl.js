@@ -3,24 +3,19 @@ const jwtStrategy = require("passport-jwt");
 const bcrypt = require("bcrypt");
 const config = require("../../config");
 
-const generateToken = user => {
-  const timestamp = new Date().getTime();
-  return jwt.encode({ sub: user.id, iat: timestamp }, config.secret);
+const generateToken = () => {
+  return jwt.sign(payload, config.secret, { expiresInMinutes: 1440 });
 };
 
 const signin = (req, res, next) => {
-  const db = req.app.get("db");
-  const { email, password } = req.body;
-  db.login_user([email]).then((data) => {
-    res.send({ token: generateToken(req.user) })
-  }).catch(err => console.log(err))
+  res.send({ token: generateToken() })
 };
 
 const signup = (req, res, next) => {
   const db = req.app.get("db");
   const { email, password } = req.body;
   const saltRounds = 12;
-  console.log(email);
+  console.log(email, password);
   bcrypt
     .hash(password, saltRounds)
     .then(hash => {
@@ -28,7 +23,7 @@ const signup = (req, res, next) => {
       return db
         .create_user([email, hash])
         .then(newUser => {
-          res.json({ token: generateToken(newUser) });
+          res.json({ token: generateToken() });
         })
         .catch(err => {
           res.json({ error: "There was an error saving to the database" });

@@ -21,21 +21,18 @@ massive(process.env.CONNECTION_STRING)
   .catch(console.log);
 
 app.use(json());
-passport.use(auth.localLogin);
+// passport.use(auth.localLogin);
 passport.use(auth.jwtLogin);
 
 //auth middleware
 const requireAuth = passport.authenticate('jwt', { session: false });
-const requireSignIn = passport.authenticate('local', { session: false })
+// const requireSignIn = passport.authenticate('local', { session: false })
 
-//Get Authenticated routes
-// const getAuth = express.Router();
-// getAuth.get('/', requireAuth, (req, res) => res.redirect('/user'))
-// getAuth.use('/', ac.signin);
+
 
 //Sign In routes
 app.post('/sign-up', requireAuth, ac.signup);
-app.post('/sign-in', requireSignIn, ac.signin);
+app.post('/sign-in', ac.signin);
 
 //Regular Routes
 app.get('/api/getlang', lc.getLanguages);
