@@ -20,26 +20,29 @@ class Register extends Component {
   }
 
   handleInput = e => {
-    this.setState({ [e.target.name]: e.target.value });
+    this.setState({ [e.target.name]: e.target.value }, () => {
+      this.matchingPass();
+    });
   };
 
   matchingPass = () => {
     const { password, confirmPass } = this.state;
-    if (password !== '' && password !== confirmPass) {
-      this.setState({ flag: true })
+    if (password !== '' && confirmPass !== '' && password !== confirmPass) {
+      this.setState({ flag: true });
     } else {
-      this.setState({ flag: false })
+      this.setState({ flag: false });
     }
-  }
+  };
 
   handleSubmit = e => {
     console.log('submit');
   };
 
   render() {
+    console.log(this.state.flag);
     return (
       <div className="register">
-
+        {this.state.flag && <p>Passwords do not match</p>}
         <form className="register__form" onSubmit={this.handleSubmit}>
           <div className="register__form__fields">
             <p>Name</p>

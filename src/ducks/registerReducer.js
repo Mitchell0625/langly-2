@@ -10,6 +10,7 @@ const initialState = {
 const GET_LANGUAGES = 'GET_LANGUAGES';
 const SELECT_LANGUAGE = 'SELECT_LANGUAGE';
 const SELECT_GOAL = 'SELECT_GOAL';
+const SIGN_IN = 'SIGN_IN';
 
 export function getLanguages() {
   return {
@@ -28,6 +29,13 @@ export function selectGoal(goal) {
   return {
     type: SELECT_GOAL,
     payload: goal
+  };
+}
+
+export function signIn(email, password) {
+  return {
+    type: SIGN_IN,
+    payload: axios.post('/signup', { email, password })
   };
 }
 
