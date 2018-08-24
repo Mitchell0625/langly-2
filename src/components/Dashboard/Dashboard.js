@@ -56,13 +56,25 @@ class Dashboard extends Component {
             </button>
 
             {this.state.switch ? (
-              <Login toggleRegister={this.toggleRegister} />
+              <Login
+                toggler={this.signInOverlay}
+                toggleRegister={this.toggleRegister}
+              />
             ) : (
-                <Register toggleLogin={this.toggleLogin} />
-              )}
+              <Register
+                toggler={this.signInOverlay}
+                toggleLogin={this.toggleLogin}
+              />
+            )}
           </div>
         )}
-        <div className='dashboard__upload'><Upload /></div>
+        {this.props.user || localStorage.getItem('token') ? (
+          <div className="dashboard__upload">
+            <Upload />
+          </div>
+        ) : (
+          ''
+        )}
       </div>
     );
   }

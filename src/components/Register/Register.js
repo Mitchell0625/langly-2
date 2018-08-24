@@ -5,7 +5,8 @@ import { signIn } from '../../ducks/registerReducer';
 import './Register.css';
 
 const propTypes = {
-  toggleLogin: PropTypes.func.isRequired
+  toggleLogin: PropTypes.func.isRequired,
+  toggler: PropTypes.func.isRequired
 };
 
 class Register extends Component {
@@ -40,7 +41,11 @@ class Register extends Component {
   };
 
   handleSubmit = e => {
-    this.props.signIn(this.state.email, this.state.password);
+    this.props
+      .signIn(this.state.name, this.state.email, this.state.password)
+      .then(user => localStorage.setItem('token', user.token))
+      .then(() => this.props.toggler())
+      .catch(err => console.log(err));
     e.preventDefault();
   };
 

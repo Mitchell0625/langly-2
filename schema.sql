@@ -12,6 +12,7 @@
 
 -- CREATE TABLE langusers (
 --     id SERIAL PRIMARY KEY,
+--     name VARCHAR(200),
 --     email VARCHAR(200),
 --     passcode VARCHAR(200)
 -- )

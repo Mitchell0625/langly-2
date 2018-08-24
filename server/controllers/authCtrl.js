@@ -13,13 +13,13 @@ const signIn = (req, res, next) => {
 
 const signUp = (req, res, next) => {
   const db = req.app.get('db');
-  const { email, password } = req.body;
+  const { name, email, password } = req.body;
   const saltRounds = 12;
 
   bcrypt
     .hash(password, saltRounds)
     .then(hash => {
-      db.create_user([email, hash])
+      db.create_user([name, email, hash])
         .then(newUser => {
           res.status(200).json({ token: generateToken(newUser) });
         })

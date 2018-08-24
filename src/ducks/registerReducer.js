@@ -33,10 +33,10 @@ export function selectGoal(goal) {
   };
 }
 
-export function signIn(email, password) {
+export function signIn(name, email, password) {
   return {
     type: SIGN_IN,
-    payload: axios.post('/sign-up', { email, password })
+    payload: axios.post('/sign-up', { name, email, password })
   };
 }
 
