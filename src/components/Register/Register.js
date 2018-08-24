@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import { signIn } from '../../ducks/registerReducer';
 import './Register.css';
 
 const propTypes = {
@@ -17,6 +19,9 @@ class Register extends Component {
       confirmPass: '',
       flag: false
     };
+    this.handleInput = this.handleInput.bind(this);
+    this.matchingPass = this.matchingPass.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInput = e => {
@@ -35,7 +40,8 @@ class Register extends Component {
   };
 
   handleSubmit = e => {
-    console.log('submit');
+    this.props.signIn(this.state.email, this.state.password);
+    e.preventDefault();
   };
 
   render() {
@@ -98,6 +104,11 @@ class Register extends Component {
     );
   }
 }
-
+function mapStateToProps(state) {
+  return state;
+}
 Register.propTypes = propTypes;
-export default Register;
+export default connect(
+  mapStateToProps,
+  { signIn }
+)(Register);

@@ -4,7 +4,8 @@ const initialState = {
   language: {},
   goal: '',
   languages: [],
-  isLoading: false
+  isLoading: false,
+  user: {}
 };
 
 const GET_LANGUAGES = 'GET_LANGUAGES';
@@ -35,7 +36,7 @@ export function selectGoal(goal) {
 export function signIn(email, password) {
   return {
     type: SIGN_IN,
-    payload: axios.post('/signup', { email, password })
+    payload: axios.post('/sign-up', { email, password })
   };
 }
 
@@ -57,10 +58,16 @@ export default function registerReducer(state = initialState, action) {
         language: action.payload
       };
     case SELECT_GOAL:
-      console.log(action);
       return {
         ...state,
         goal: action.payload
+      };
+
+    case `${SIGN_IN}_FULFILLED`:
+      console.log(action);
+      return {
+        ...state,
+        user: action.payload.data
       };
 
     default:
