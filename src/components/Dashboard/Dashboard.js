@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Register from '../Register/Register';
 import Login from '../Login/Login';
 import Upload from '../Upload/Upload';
+import Message from '../Message/Message';
 import dropdown from '../Header/dropdown/dropdown';
 import './Dashboard.css';
 
@@ -71,6 +72,7 @@ class Dashboard extends Component {
         {this.props.user || localStorage.getItem('token') ? (
           <div className="dashboard__upload">
             <Upload />
+            <Message />
           </div>
         ) : (
           ''
