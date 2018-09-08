@@ -19,10 +19,11 @@ class Dashboard extends Component {
     //     learning: hasLang;
     //   });
     // }
-    this.props.toggler();
-
-    this.setState(() => ({ background: 'gray' }));
-
+    const toke = localStorage.getItem('token');
+    if (toke.length < 1) {
+      this.props.toggler();
+      this.setState(() => ({ background: 'gray' }));
+    }
     console.log(this.props.toggle);
   };
 

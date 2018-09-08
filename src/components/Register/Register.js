@@ -51,7 +51,7 @@ class Register extends Component {
   handleSubmit = e => {
     this.props
       .signUp(this.state.name, this.state.email, this.state.password)
-      .then(user => localStorage.setItem('token', user.token))
+      .then(person => localStorage.setItem('token', person.token))
       .then(() => this.props.toggler())
       .catch(err => console.log(err));
     e.preventDefault();
@@ -61,7 +61,11 @@ class Register extends Component {
     console.log('hit');
     this.props
       .signUp(this.state.name, this.state.email, this.state.password)
-      .then(user => localStorage.setItem('token', user.token))
+      .then(person => {
+        console.log(person);
+
+        localStorage.setItem('token', person.value.data.token);
+      })
       .then(() => this.props.history.push('/content'))
       .catch(err => console.log(err));
     e.preventDefault();
