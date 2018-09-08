@@ -1,12 +1,19 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { signIn } from '../../ducks/registerReducer';
+import { signUp } from '../../ducks/registerReducer';
 import './Register.css';
 
 const propTypes = {
-  toggleLogin: PropTypes.func.isRequired,
-  toggler: PropTypes.func.isRequired
+  toggleLogin: PropTypes.func,
+  toggler: PropTypes.func,
+  history: PropTypes.shape({ push: PropTypes.func.isRequired }).isRequired
+};
+
+const defaultProps = {
+  toggleLogin: PropTypes.func,
+  toggler: PropTypes.func
 };
 
 class Register extends Component {
@@ -23,6 +30,7 @@ class Register extends Component {
     this.handleInput = this.handleInput.bind(this);
     this.matchingPass = this.matchingPass.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.submitted = this.submitted.bind(this);
   }
 
   handleInput = e => {
@@ -42,9 +50,19 @@ class Register extends Component {
 
   handleSubmit = e => {
     this.props
-      .signIn(this.state.name, this.state.email, this.state.password)
+      .signUp(this.state.name, this.state.email, this.state.password)
       .then(user => localStorage.setItem('token', user.token))
       .then(() => this.props.toggler())
+      .catch(err => console.log(err));
+    e.preventDefault();
+  };
+
+  submitted = e => {
+    console.log('hit');
+    this.props
+      .signUp(this.state.name, this.state.email, this.state.password)
+      .then(user => localStorage.setItem('token', user.token))
+      .then(() => this.props.history.push('/content'))
       .catch(err => console.log(err));
     e.preventDefault();
   };
@@ -54,7 +72,14 @@ class Register extends Component {
     return (
       <div className="register">
         {this.state.flag && <p>Passwords do not match</p>}
-        <form className="register__form" onSubmit={this.handleSubmit}>
+        <form
+          className="register__form"
+          onSubmit={
+            this.props.pathName === '/content'
+              ? this.handleSubmit
+              : this.submitted
+          }
+        >
           <div className="register__form__fields">
             <p>Name</p>
             <input
@@ -113,7 +138,11 @@ function mapStateToProps(state) {
   return state;
 }
 Register.propTypes = propTypes;
-export default connect(
-  mapStateToProps,
-  { signIn }
-)(Register);
+Register.defaultProps = defaultProps;
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { signUp }
+  )(Register)
+);

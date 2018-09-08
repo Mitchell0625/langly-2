@@ -44,10 +44,10 @@ class Header extends React.Component {
               )}
             </div>
           ) : (
-              ''
-            )}
+            ''
+          )}
           {window.location.pathname !== '/' && (
-            <Link to="/content">
+            <Link to="/signUp">
               <button className="header__button header__button-active">
                 Create profile
               </button>
