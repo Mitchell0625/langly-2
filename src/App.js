@@ -7,6 +7,7 @@ import SelectLang from './components/SelectLang/SelectLang';
 import Login from './components/Login/Login';
 import Dashboard from './components/Dashboard/Dashboard';
 import Register from './components/Register/Register';
+import Logout from './components/Logout/Logout';
 
 class App extends Component {
   render() {
@@ -20,6 +21,7 @@ class App extends Component {
           <Route path="/login" component={Login} />
           <Route path="/signUp" component={Register} />
           <Route path="/content" component={Dashboard} />
+          <Route path="/logout" component={Logout} />
         </Switch>
       </div>
     );

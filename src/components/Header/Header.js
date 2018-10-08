@@ -6,7 +6,11 @@ import DropLog from './dropdown/DropLog/DropLog';
 import dropdown from './dropdown/dropdown';
 
 class Header extends React.Component {
+  signOut = () => {
+    window.localStorage.removeItem('token');
+  };
   render() {
+    console.log(window.localStorage.getItem('token'));
     return (
       <div className="header">
         <Link to="/">
@@ -17,7 +21,9 @@ class Header extends React.Component {
         </Link>
 
         <div className="header__div">
-          {window.location.pathname === '/' ? (
+          {(!window.localStorage.getItem('token') &&
+            window.location.pathname === '/') ||
+          window.location.pathname === '/logout' ? (
             <div>
               <p className="header__option">
                 Site language:{' '}
@@ -46,11 +52,17 @@ class Header extends React.Component {
           ) : (
             ''
           )}
-          {window.location.pathname !== '/' && (
-            <Link to="/signUp">
-              <button className="header__button header__button-active">
-                Create profile
-              </button>
+          {!window.localStorage.getItem('token') &&
+            window.location.pathname !== '/' && (
+              <Link to="/signUp">
+                <button className="header__button header__button-active">
+                  Create profile
+                </button>
+              </Link>
+            )}
+          {window.localStorage.getItem('token') && (
+            <Link to="/logout">
+              <button onClick={this.signOut}>Sign Out</button>
             </Link>
           )}
         </div>

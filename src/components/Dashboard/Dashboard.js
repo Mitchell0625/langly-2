@@ -20,7 +20,7 @@ class Dashboard extends Component {
     //   });
     // }
     const toke = localStorage.getItem('token');
-    if (toke.length < 1) {
+    if (!toke) {
       this.props.toggler();
       this.setState(() => ({ background: 'gray' }));
     }

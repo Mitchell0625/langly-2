@@ -67,6 +67,7 @@ class Register extends Component {
         localStorage.setItem('token', person.value.data.token);
       })
       .then(() => this.props.history.push('/content'))
+      .then(() => this.props.toggler())
       .catch(err => console.log(err));
     e.preventDefault();
   };
