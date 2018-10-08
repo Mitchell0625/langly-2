@@ -29,24 +29,6 @@ app.use(json());
 passport.use(auth.localLogin);
 passport.use(auth.jwtLogin);
 
-AWS.config.update({
-  accessKeyId: process.env.MY_ACCESS_ID_AWS,
-  secretAccessKey: process.env.MY_SECRET_ACCESS_AWS
-});
-
-AWS.config.setPromisesDependency(bluebird);
-const s3 = new AWS.S3();
-
-const uploadFile = (buffer, name, type) => {
-  const params = {
-    ACL: 'public-read',
-    Body: buffer,
-    Bucket: process.env.S3_BUCKET,
-    ContentType: type.mime,
-    Key: `${name}.${type.ext}`
-  };
-  return s3.upload(params).promise();
-};
 //auth middleware
 // const requireAuth = passport.authenticate('jwt', { session: false });
 // const requireSignIn = passport.authenticate('local', { session: false });
