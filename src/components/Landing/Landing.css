@@ -5,16 +5,18 @@
   color: #333; }
 
 .landing__div {
-  margin-top: 30vh;
-  margin-left: 10%;
-  text-align: left; }
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%; }
   .landing__div p {
     display: none; }
   .landing__div h2 {
     font-size: 40px;
     width: 139px;
     line-height: 48px;
-    margin-bottom: 30px; }
+    margin-bottom: 30px;
+    margin-left: 10%; }
 
 .landing__button {
   padding: 10px 30px;

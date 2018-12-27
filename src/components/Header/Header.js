@@ -25,7 +25,8 @@ class Header extends React.Component {
             window.location.pathname === '/') ||
           window.location.pathname === '/logout' ? (
             <div>
-              <p className="header__option">
+              {/* desktop header */}
+              <p className="header__option__desktop">
                 Site language:{' '}
                 <span>
                   <select>
@@ -36,6 +37,13 @@ class Header extends React.Component {
                   </select>
                 </span>
               </p>
+              {/* mobile header */}
+              <select className="header__option__mobile">
+                <option value="English">EN</option>
+                <option value="Spanish">SP</option>
+                <option value="French">FR</option>
+                <option value="Italian">IT</option>
+              </select>
               <button
                 className="header-button"
                 onMouseOver={this.props.toggler}

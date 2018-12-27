@@ -18,6 +18,9 @@
 
 .header__h1 {
   font-size: 40px; }
+  @media (max-width: 640px) {
+    .header__h1 {
+      font-size: 30px; } }
 
 .lang {
   display: hidden; }
@@ -49,6 +52,14 @@
   padding: 10px 30px;
   border: 1px solid #333;
   border-radius: 40px; }
+
+@media (max-width: 768px) {
+  .header__option__desktop {
+    display: none; } }
+
+@media (min-width: 1024px) {
+  .header__option__mobile {
+    display: none; } }
 
 .header__button-active:hover {
   background-color: #333;

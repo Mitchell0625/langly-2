@@ -21,6 +21,9 @@
 }
 .header__h1 {
   font-size: 40px;
+  @media (max-width: $phone) {
+    font-size: 30px;
+  }
 }
 
 .header__div > div {
@@ -67,6 +70,18 @@
   padding: 10px 30px;
   border: 1px solid #333;
   border-radius: 40px;
+}
+
+.header__option__desktop {
+  @media (screen and max-width: $tablet) {
+    display: none;
+  }
+}
+
+.header__option__mobile {
+  @media (min-width: $desktop) {
+    display: none;
+  }
 }
 
 .header__button-active:hover {

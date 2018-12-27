@@ -4,8 +4,24 @@
   margin: 20px;
   padding: 20px;
   width: 10vw;
+
+  & :hover + img {
+    animation: revolve 0.8s linear;
+  }
 }
 
 .languages__title {
   padding-bottom: 20px;
+}
+
+@keyframes revolve {
+  0% {
+    transform: rotateY(1deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
 }
